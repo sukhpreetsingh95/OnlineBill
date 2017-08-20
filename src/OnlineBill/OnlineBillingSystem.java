@@ -11,7 +11,7 @@ package OnlineBill;
  */
 public class OnlineBillingSystem extends javax.swing.JFrame {
     
-    String tax;
+  String tax;
     int amount;
     int total;
 
@@ -175,6 +175,7 @@ public class OnlineBillingSystem extends javax.swing.JFrame {
             String enterVal=jTextField1.getText();
             double answer=Double.parseDouble(enterVal);
            amount=(int)Math.round(answer*32);
+           jTextField2.setText( Integer.toString(amount));
            //jTextField2.setText(amount.toString);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -194,24 +195,27 @@ public class OnlineBillingSystem extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
                 try
                 {
+                    jTextField3.getText();
+                    jTextField2.getText();
                     double t=Double.parseDouble(tax);
                     double a=t/100;
                     double x=amount*a;
                     total=(int)Math.round(amount+x);
+                    jTextField4.setText(Integer.toString(total));
                 }
          catch(Exception e)
                 {
-                    
+                    e.printStackTrace();
                 }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-                   jTextField2.setText( Integer.toString(amount));
+                //   jTextField2.setText( Integer.toString(amount));
 
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-                    jTextField4.setText(Integer.toString(total));
+//                    jTextField4.setText(Integer.toString(total));
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
